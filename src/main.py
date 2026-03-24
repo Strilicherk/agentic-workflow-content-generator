@@ -18,7 +18,8 @@ def main() -> None:
         human_message = HumanMessage(user_input)
         
         result = graph.invoke({"messages": human_message}, config=config)
-        print(result["messages"][-1].content)
+        print(Markdown('---'))
+        print(result["final_version"])
         print(Markdown('---'))
 
 if __name__ == '__main__':
