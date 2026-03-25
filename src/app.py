@@ -44,7 +44,7 @@ def controller_agente():
 
     except Exception as e:
         # Captura qualquer erro não tratado no grafo para não derrubar o servidor
-        return {"erro": f"Falha interna no processamento do agente: {str(e)}"}, status.HTTP_500_INTERNAL_SERVER_ERROR
+        return {"erro": f"Falha interna no processamento do agente: {str(e)}"}, 500
 
 
 if __name__ == '__main__':
