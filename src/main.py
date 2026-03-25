@@ -15,12 +15,16 @@ def main() -> None:
             print("Bye 👋")
             break
 
-        human_message = HumanMessage(user_input)
-        
+        human_message = HumanMessage(user_input)        
         result = graph.invoke({"messages": human_message}, config=config)
+        final_version = result.get("final_version")
+
         print(Markdown('---'))
-        print(result["final_version"])
-        print(Markdown('---'))
+        if final_version:
+            print(final_version)
+        else:
+            ultima_mensagem = result["messages"][-1].content
+            print(ultima_mensagem)
 
 if __name__ == '__main__':
     main()

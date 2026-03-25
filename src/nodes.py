@@ -31,6 +31,9 @@ def researcher_node(state: State) -> State:
         messages_with_system_prompt = [SystemMessage(content=RESEARCH_SYSTEM_PROMPT)] + state["messages"]
         llm_response = llm_with_tools.invoke(messages_with_system_prompt)
         
+        print(f"Resposta do llm: {llm_response}")
+        print(Markdown('---'))
+        
         return {"messages": llm_response}
 
     except Exception as e:

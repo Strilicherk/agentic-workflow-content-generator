@@ -5,7 +5,7 @@ from langchain_community.document_loaders import WebBaseLoader
 from bs4 import SoupStrainer
 
 def load_llm() -> BaseChatModel:
-    return init_chat_model("llama3.2:latest", model_provider="ollama")
+    return init_chat_model("mistral-nemo:latest", model_provider="ollama")
 
 def limpar_texto(texto_bruto: str) -> str:
     """
